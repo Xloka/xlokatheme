@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<!-- 
+`8.`8888.      ,8' 8 8888         ,o888888o.     8 8888     ,88'          .8.          
+ `8.`8888.    ,8'  8 8888      . 8888     `88.   8 8888    ,88'          .888.         
+  `8.`8888.  ,8'   8 8888     ,8 8888       `8b  8 8888   ,88'          :88888.        
+   `8.`8888.,8'    8 8888     88 8888        `8b 8 8888  ,88'          . `88888.       
+    `8.`88888'     8 8888     88 8888         88 8 8888 ,88'          .8. `88888.      
+    .88.`8888.     8 8888     88 8888         88 8 8888 88'          .8`8. `88888.     
+   .8'`8.`8888.    8 8888     88 8888        ,8P 8 888888<          .8' `8. `88888.    
+  .8'  `8.`8888.   8 8888     `8 8888       ,8P  8 8888 `Y8.       .8'   `8. `88888.   
+ .8'    `8.`8888.  8 8888      ` 8888     ,88'   8 8888   `Y8.    .888888888. `88888.  
+.8'      `8.`8888. 8 888888888888 `8888888P'     8 8888     `Y8. .8'       `8. `88888. 
+
+Made With Love By @mrxloka 
+contact me :
+fackebook : https://www.facebook.com/xlokacom
+twitter : https://twitter.com/mrxloka
+Google plus : https://plus.google.com/+AhmedSalehxloka
+tumblr : http://tumblr.xloka.com 
+Github : https://github.com/Xloka
+Webiste : xloka.com
+email : a.saleh.ismael@gmail.com or xloka@xloka.com
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}
+</title>
+
+<meta name="author" content="@mrxloka"> 
+<meta name="viewport" content="width=device-width">
+<!-- Facebook Graph-->
+<meta property="og:site_name" content="{Title}"/>
+{block:PermalinkPage}
+<meta property="og:url" content="{Permalink}"/>
+<meta property="og:type" content="article"/>
+{block:Posts}
+{block:Text}
+{block:Title}
+<meta property="og:title" content="{PlaintextTitle}"/>
+{/block:Title}
+<meta property="og:description" content="{PlaintextBody}"/>
+<meta property="og:image" content="{PortraitURL-128}"/>
+{/block:Text}
+{block:Photo}
+<meta property="og:image" content="{PhotoURL-500}"/>
+{block:Caption}
+<meta property="og:description" content="{PlaintextCaption}"/>
+{/block:Caption}
+{/block:Photo}
+{block:Photoset}
+{block:Photos}
+<meta property="og:image" content="{PhotoURL-500}"/>
+{/block:Photos}
+{block:Caption}
+<meta property="og:description" content="{PlaintextCaption}"/>
+{/block:Caption}
+{/block:Photoset}
+{block:Quote}
+<meta property="og:title" content="{PlaintextQuote}"/>
+<meta property="og:description" content="{PlaintextSource}"/>
+<meta property="og:image" content="{PortraitURL-128}"/>
+{/block:Quote}
+{block:Link}
+<meta property="og:title" content="{PlaintextName}"/>
+<meta property="og:description" content="{PlaintextDescription}"/>
+<meta property="og:image" content="{PortraitURL-128}"/>
+{/block:Link}
+{block:Chat}
+<meta property="og:title" content="{PlaintextTitle}"/>
+<meta property="og:description" content="{block:Lines}{block:Label}{Label}: {/block:Label}{Line} &bull; {/block:Lines}"/>
+<meta property="og:image" content="{PortraitURL-128}"/>
+{/block:Chat}
+{block:Audio}
+<meta property="og:title" content="{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}"/>
+<meta property="og:description" content="{PlaintextCaption}"/>
+{block:AlbumArt}
+<meta property="og:image" content="{AlbumArtURL}"/>
+{/block:AlbumArt}
+{/block:Audio}
+{block:Video}
+{block:Caption}
+<meta property="og:description" content="{PlaintextCaption}"/>
+{/block:Caption}
+{/block:Video}
+{block:Answer}
+<meta property="og:title" content="{PlaintextQuestion}"/>
+<meta property="og:description" content="{PlaintextAnswer}"/>
+<meta property="og:image" content="{PortraitURL-128}"/>
+{/block:Answer}
+{/block:Posts}
+{/block:PermalinkPage}
+{block:IndexPage}
+<meta property="og:title" content="{Title}"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:description" content="{MetaDescription}"/>
+<meta property="og:image" content="{PortraitURL-128}"/>
+{/block:IndexPage} 
+
+<meta name="color:Theme Main Color" content="#e74c3c" />
+<meta name="color:Theme Secondary Color" content="#c0392b" />
+<meta name="color:Description Header Color" content="#fff" />
+<meta name="color:Separator Color" content="#eee" />
+<meta name="color:Posts Background" content="#eee" />
+
+
+<meta name="text:Twitter URL" content=""/>
+<meta name="text:Facebook URL" content=""/>
+<meta name="text:Google Plus URL" content=""/>
+<meta name="text:Pinterest URL" content=""/>
+<meta name="text:Linkedin URL" content=""/>
+
+<meta name="text:Google Analytics UA Code" content="" /> 
+
+<meta name="text:Keywords" content=""/>
+<meta name="if:Infinite Scroll" content="0"/>
+
+{block:IfKewords}
+<meta name="keywords" content="{text:Keywords}" />
+{/block:IfKewords}
+<link rel="stylesheet" href="http://static.tumblr.com/mbaxc9v/u3Gnc9xb3/bootstrap.min.css">
+<link rel="stylesheet" href="http://static.tumblr.com/mbaxc9v/i1snc9xb4/bootstrap-theme.min.css">
+<style type="text/css">
+*{
+position:relative;
+padding:0;
+margin:0;
+}
+body{
+font-size:200% !important;
+width: 100%;
+color:{AccentColor};
+background-color:{BackgroundColor};
+}
+ol,ul{
+list-style:none;
+}
+a,a:hover{
+text-decoration:none;
+color:{color:Theme Main Color};
+}
+a:hover{
+    color:{color:Theme Secondary Color};
+}
+.btn-primary{
+    background:{color:Theme Main Color};
+    border-color:{color:Theme Main Color};
+    font-size: 16px;
+    line-height: 42px;
+    height: 45px;
+    padding: 0 20px;
+}
+.btn-primary:hover,.btn-primary:active{
+     background:{color:Theme Secondary Color};
+    border-color:{color:Theme Secondary Color};
+}
+blockquote{
+    border:none;
+}
+.header h1, h1 , h2 , h3 , h4 , h5 , h6{
+    font-family: {TitleFont};
+    font-weight: {TitleFontWeight};
+    color:{TitleColor};
+}
+.posts_holder{
+    margin: 0 auto;
+}
+.home_header{
+    {block:ShowHeaderImage}
+    background-image:url({HeaderImage});
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    {/block:ShowHeaderImage}
+    {block:HideHeaderImage}
+    background:{color:Posts Background};
+    {/block:HideHeaderImage}
+    height: 300px;
+    width:100%;
+    text-shadow: 1px 1px 5px #000;
+    margin-bottom:15px;
+}
+.home_header h1{
+    color: {color:Description Header Color};
+    padding:127px;
+}
+.post {
+    padding: 15px 0px;
+    max-width:500px;
+    margin: 20px auto;
+    background: {color:Posts Background};
+    border-radius:6px;
+}
+.post:after{
+    content:" ";
+    background: {color:Separator Color};
+    width:50%;
+    height: 1px;
+    position:absolute;
+    left:25%;
+    bottom:0;
+    top:100%;
+    margin-top:10px;
+    {block:PermalinkPage} 
+        display:none;
+    {/block:PermalinkPage}
+}
+
+.text{
+   padding:20px; 
+}
+.photo{
+  border:0px solid #eee;
+}
+.photo img{
+    margin: 0 auto; 
+}
+.photoset .photoset_row{
+    margin:0;
+}
+.quote{
+   padding:20px; 
+}
+.quote #quote {
+    font-size: 150%;
+    position: relative;
+}
+.quote #source {
+    text-align: left;
+    position: relative;
+    margin-top: 10px; 
+    width: 80%;
+    left: 20%;
+    font-size: 80%;
+}
+.caption{
+    width:500px;
+    padding: 20px 15px;
+}
+.footer{
+    padding: 100px;
+}
+
+.xnav li{
+    display:inline-block;
+    padding:10px 15px;
+}
+.fix-nav{
+    position: fixed;
+    top: 0;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 99;
+    text-align: ;
+    background-color:{BackgroundColor};
+    padding:20px;
+    box-shadow: 1px 0px 5px #444;
+}
+.share-icons ul li{
+    display:inline-block;
+    padding: 15px 10px;
+}
+.share-icons ul li img,.footer img{
+    width:32px;
+    height:32px;
+}
+.footer img{
+    margin:15px 10px;
+}
+ol.notes {
+    padding: 0px;
+    margin: 25px auto;
+    list-style-type: none;
+    border-bottom: solid 1px {color:Separator Color};
+    width: 640px;
+    text-align: left;
+}
+
+ol.notes li.note {
+    border-top: solid 1px {color:Separator Color};
+    padding: 10px;
+}
+
+ol.notes li.note img.avatar {
+    vertical-align: -4px;
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+}
+
+ol.notes li.note span.action {
+    font-weight: bold;
+}
+
+ol.notes li.note .answer_content {
+    font-weight: normal;
+}
+
+ol.notes li.note blockquote {
+    border-color: {color:Separator Color};
+    padding: 4px 10px;
+    margin: 10px 0px 0px 25px;
+}
+
+ol.notes li.note blockquote a {
+    text-decoration: none;
+}
+.buttons{
+     padding:15px 5px;
+     width:50%;
+    margin:0 auto;
+}
+.buttons span{
+    display:inline-block;
+}
+.date{
+    border-bottom:1px solid {color:Separator Color};
+    padding:15px 5px;
+    width:50%;
+    margin:0 auto;
+}
+.date a{
+    padding: 20px 15px;
+}
+.nav-x{
+    padding:20px;
+}
+{block:PermalinkPage} 
+.post,.date {
+    width: 640px;
+}
+.post .h3{
+    font-size:30px;
+    padding:20px;
+}
+{/block:PermalinkPage}
+{CustomCSS}
+</style>
+<script type="text/javascript" src="http://static.tumblr.com/mbaxc9v/w34nc9xa6/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/mbaxc9v/ooBnc9xa2/bootstrap.min.js"></script>
+{block:IfInfiniteScroll}
+<script type="text/javascript" src="http://static.tumblr.com/mbaxc9v/pA3ncfpx3/infinitescrolling.js"></script>
+{/block:IfInfiniteScroll}
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+{block:IfGoogleAnalyticsUACode}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '{text:Google Analytics UA Code}', 'auto');
+  ga('send', 'pageview');
+
+</script>
+{/block:IfGoogleAnalyticsUACode}
+
+</head>
+<body class="text-center">
+<div class="contanier header">
+{block:ShowAvatar}
+<a href="{BlogURL}"> <img src="{PortraitURL-128}" alt="Portrait"> </a>
+{/block:ShowAvatar}
+{block:ShowTitle}
+<a href="{BlogURL}"><h1>{Title}</h1></a>
+{/block:ShowTitle}
+</div>
+<ul class="xnav">
+<li><a href="{BlogURL}">{lang:Home}</a></li>
+{block:HasPages}
+{block:Pages} 
+<li><a href="{URL}">{LABEL}</a></li>
+{/block:Pages}
+{/block:HasPages}
+{block:AskEnabled}
+<li><a href="/ask">{AskLabel}</a></li>
+{/block:AskEnabled}
+{block:SubmissionsEnabled}
+<li><a href="/submit">{SubmitLabel}</a></li>
+{/block:SubmissionsEnabled}
+<li><a href="/archive">{lang:Archive}</a></li>
+</ul>
+
+{block:IndexPage}
+<div class="home_header">
+
+{block:Description}
+<h1> {Description} </h1>
+{/block:Description}   
+   
+</div>
+{/block:IndexPage}
+
+<div class="contanier posts_holder">
+<div class="autopagerize_page_element" id="posts">
+{block:Posts}{block:Text}
+<div class="post text">
+{block:Title}
+<h3><a href="{Permalink}">{Title}</a></h3>
+{/block:Title}{Body}
+ </div>
+{/block:Text}{block:Photo}
+<div class="post photo">
+<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+
+{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}
+ </div>
+{/block:Photo}{block:Panorama}
+<div class="post panorama">
+{LinkOpenTag}
+<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+{LinkCloseTag}{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}
+ </div>
+{/block:Panorama}{block:Photoset}
+<div class="post photoset">
+{Photoset-500}{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}
+ </div>
+{/block:Photoset}{block:Quote}
+<div class="post quote">
+<div id="quote">{Quote}</div>
+
+{block:Source}
+<div id="source">_ {Source}</div>
+{/block:Source}
+ </div>
+{/block:Quote}{block:Link}
+<div class="post link">
+<a href="{URL}" class="link" {Target}>{Name}</a>
+
+{block:Description}
+<div class="description">{Description}</div>
+{/block:Description}
+ </div>
+{/block:Link}{block:Chat}
+<div class="post chat">
+{block:Title}
+<h3><a href="{Permalink}">{Title}</a></h3>
+{/block:Title}
+
+<ul class="chat">
+{block:Lines}
+<div class="{Alt} user_{UserNumber}">
+{block:Label}
+<span class="label">{Label}</span>
+{/block:Label}{Line}
+ </div>
+{/block:Lines}
+</ul>
+ </div>
+{/block:Chat}{block:Video}
+<div class="post video">
+{Video-500}{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}
+ </div>
+{/block:Video}{block:Audio}
+<div class="post audio">
+{AudioEmbed}{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}
+ </div>
+{/block:Audio}{block:Answer}
+<div id="{PostID}" class="post answer">
+<div class="question">
+<img id="avatar" src="{AskerPortraitURL-48}">
+<span id="asker">{Asker} asked:</span>
+<div id="text">{Question}</div>
+</div>
+<div id="answer">{Answer}</div>
+</div>
+{/block:Answer}
+
+{block:Date} 
+<div class="buttons">
+  <span class="like">{LikeButton size="20" color="gray"}</span>
+  <span class="reblog">{ReblogButton size="20" color="gray"}</span>
+</div>
+<div class="date">
+{block:NoteCount}
+<a href="{Permalink}" >{NoteCountWithLabel}</a>
+{/block:NoteCount}
+<a href="{Permalink}" >{TimeAgo}</a>
+</div> 
+{/block:Date}
+{/block:Posts}
+</ol>
+
+</div>
+
+{block:PermalinkPage} 
+<div class="share-icons">
+<ul>
+<li>
+<a target="_blank" href="mailto:?Subject=Shared Link&Body=check this {Permalink}">
+<img src="http://static.tumblr.com/mbaxc9v/Y3pncinbs/email.png" alt="social-icon">
+</a>
+</li>
+<li>
+<a target="_blank" href="http://www.facebook.com/sharer.php?u={Permalink}">
+<img src="http://static.tumblr.com/mbaxc9v/liuncinbs/facebook.png" alt="social-icon">
+</a>
+</li>
+<li>
+<a target="_blank" href="https://plus.google.com/share?url={Permalink}">
+<img src="http://static.tumblr.com/mbaxc9v/0mCncinbt/google.png" alt="social-icon">
+</a>
+</li>
+<li>
+<a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url={Permalink}">
+<img src="http://static.tumblr.com/mbaxc9v/AeFncinbv/linkedin.png" alt="social-icon">
+</a>
+</li>
+<li>
+<a target="_blank" href="http://twitter.com/share?url={Permalink}&text={Title}">
+<img src="http://static.tumblr.com/mbaxc9v/4Bencinbx/twitter.png" alt="social-icon">
+</a>
+</li>
+<li>
+<a target="_blank" href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+<img src="http://static.tumblr.com/mbaxc9v/62Vncinbw/pinterest.png" alt="social-icon">
+</a>
+</li>
+</ul>
+</div>
+{/block:PermalinkPage}
+
+
+<div class="nav-x">
+{block:IfNotInfiniteScroll}
+{block:Pagination}
+{block:PreviousPage}
+<a class="btn btn-lg btn-primary" href="{PreviousPage}">{lang:Previous page}</a>
+{/block:PreviousPage}
+
+{block:NextPage}
+<a class="btn btn-lg btn-primary" href="{NextPage}">{lang:Next page}</a>
+{/block:NextPage}
+{/block:Pagination}
+{/block:IfNotInfiniteScroll}
+{block:PermalinkPagination} 
+{block:PreviousPost}
+<a class="btn btn-lg btn-primary" href="{PreviousPost}">{lang:Previous post}</a>
+{/block:PreviousPost}
+ 
+{block:NextPost}
+<a class="btn btn-lg btn-primary" href="{NextPost}">{lang:Next post}</a>
+{/block:NextPost} 
+{/block:PermalinkPagination}
+</div>
+
+{PostNotes-64}
+
+<div class="col-lg-12 footer">
+<a href="{BlogUrl}"><h4> &copy;{Title} {CopyrightYears} </h4></a> 
+{block:IfTwitterURL}<a href="{text:Twitter URL}" target="_blank"><img src="http://static.tumblr.com/mbaxc9v/4Bencinbx/twitter.png" alt="social-icon"></a>
+{/block:IfTwitterURL}
+{block:IfFacebookURL}<a href="{text:Facebook URL}" target="_blank"><img src="http://static.tumblr.com/mbaxc9v/liuncinbs/facebook.png" alt="social-icon"></a>
+{/block:IfFacebookURL}
+{block:IfGooglePlusURL}<a href="{text:GooglePlus URL}" target="_blank"><img src="http://static.tumblr.com/mbaxc9v/0mCncinbt/google.png" alt="social-icon"></a>
+{/block:IfGooglePlusURL}
+{block:IfPinterestURL}<a href="{text:Pinterest URL}" target="_blank"><img src="http://static.tumblr.com/mbaxc9v/62Vncinbw/pinterest.png" alt="social-icon"></a>
+{/block:IfPinterestURL}
+{block:IfLinkedinURL}<a href="{text: LinkedinURL}" target="_blank"><img src="http://static.tumblr.com/mbaxc9v/AeFncinbv/linkedin.png" alt="social-icon"></a>
+{/block:IfLinkedinURL}
+</div>
+ <script>
+     $(document).ready(function (){
+    $(window).scroll(function() {                
+        if( $(window).scrollTop() > 250 ){
+            $(".xnav").addClass("fix-nav");
+        }else{
+             $(".xnav").removeClass("fix-nav");
+        }
+    });
+});
+ </script>
+ </body>
+</html>
